@@ -19,7 +19,7 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
   <link rel="stylesheet" href="styles/main.css">
   <script type="text/javascript" src="racer.js"></script>
@@ -34,16 +34,8 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   	<div class="container" name="header">
-  		<div class="row" name="title">
-  			<div class="twelve columns">
-  				<h1>Racer Game</h1>
-  			</div>
-  		</div>
-  		<div class="row" name="subtitle">
-  			<div class="twelve columns">
-  				<h2>By TL</h2>
-  			</div>
-  		</div>
+  		<h1>Racer Game</h1>
+  		<h2>By Tony Luisi</h2>
   	</div>
 
 
@@ -62,6 +54,7 @@
   				<div class="three columns">
   					<input type="text" name="players">
   				</div>
+  				<input type="checkbox" id="CPU" value="yes">CPU players other than Player 1? <br>
   				<div class="six columns">
   					<button onclick='update()'>Update</button>
   				</div>
@@ -70,12 +63,17 @@
   	</div>
 
   	<div class="container" name="track">
+  		<button onclick="go()">START</button>
   		<div class="row">
   			<div class="twelve columns">
   				<table id="racer_table">
   				</table>
   			</div>
   		</div>
+  	</div>
+
+  	<div class="container" name="results">
+  		<h1 id="display">Press Start When Ready</h1>
   	</div>
 
 

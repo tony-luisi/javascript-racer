@@ -1,19 +1,24 @@
 
 table, th, td {
-   border: 1px solid black;
-   width: 100%;
+   border: 1px 1px 0px 0px solid black;
+   width: 50px;
    table-layout: fixed;
    height: 50px;
+   background-color: #0066FF;
 
 }
 
+
 .active {
-  background-color: red;
-  background-image:url('../images/favicon.png');
+  background-image:url('../images/boat.png');
   background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center; 
 
+}
+
+body {
+  background-color: #009900;
 }
 
 
