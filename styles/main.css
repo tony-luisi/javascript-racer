@@ -1,9 +1,9 @@
 
 table, th, td {
    border: 1px 1px 0px 0px solid black;
-   width: 50px;
    table-layout: fixed;
-   height: 50px;
+   width: 100%;
+   height: 3em;
    background-color: #0066FF;
 
 }
@@ -11,7 +11,7 @@ table, th, td {
 
 .active {
   background-image:url('../images/boat.png');
-  background-size: 50px 50px;
+  background-size: 3em 3em;
   background-repeat: no-repeat;
   background-position: center; 
 
@@ -21,6 +21,6 @@ body {
   background-color: #009900;
 }
 
-
+* { border: 1px solid red; }
 
 

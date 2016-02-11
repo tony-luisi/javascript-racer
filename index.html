@@ -20,7 +20,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <link rel="stylesheet" href="styles/main.css">
   <script type="text/javascript" src="racer.js"></script>
 
@@ -33,8 +33,9 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  	<div class "container" name = "main">
   	<div class="container" name="header">
-  		<h1>Racer Game</h1>
+  		<h1>Boat Racer</h1>
   		<h2>By Tony Luisi</h2>
   	</div>
 
@@ -46,13 +47,13 @@
   					<label for="length">Track Length:</label>
   				</div>  			
   				<div class="three columns">
-  					<input type="text" name="length">
+  					<input type="text" name="length" onblur="update()">
   				</div>
   				<div class="three columns">
   					<label for="players">No of Players:</label>
   				</div>  			
   				<div class="three columns">
-  					<input type="text" name="players">
+  					<input type="text" name="players" onblur="update()">
   				</div>
   				<input type="checkbox" id="CPU" value="yes">CPU players other than Player 1? <br>
   				<div class="six columns">
@@ -74,6 +75,7 @@
 
   	<div class="container" name="results">
   		<h1 id="display">Press Start When Ready</h1>
+  	</div>
   	</div>
 
 
