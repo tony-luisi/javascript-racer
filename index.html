@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Tony Luisi</title>
+  <meta name="description" content="Tony's github website">
+  <meta name="author" content="Tony Luisi">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– 
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="text/javascript" src="racer.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  	<div class="container" name="header">
+  		<div class="row" name="title">
+  			<div class="twelve columns">
+  				<h1>Racer Game</h1>
+  			</div>
+  		</div>
+  		<div class="row" name="subtitle">
+  			<div class="twelve columns">
+  				<h2>By TL</h2>
+  			</div>
+  		</div>
+  	</div>
+
+
+  	<div class="container" name="configuration">
+  		<form name="parameters">
+  			<div class="row">
+  				<div class="three columns">
+  					<label for="length">Track Length:</label>
+  				</div>  			
+  				<div class="three columns">
+  					<input type="text" name="length">
+  				</div>
+  				<div class="three columns">
+  					<label for="players">No of Players:</label>
+  				</div>  			
+  				<div class="three columns">
+  					<input type="text" name="players">
+  				</div>
+  				<div class="six columns">
+  					<button onclick='update()'>Update</button>
+  				</div>
+  			</div>
+  		</form>
+  	</div>
+
+  	<div class="container" name="track">
+  		<div class="row">
+  			<div class="twelve columns">
+  				<table id="racer_table">
+  				</table>
+  			</div>
+  		</div>
+  	</div>
+
+
+	<script>
+		setup();
+	</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
