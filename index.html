@@ -34,37 +34,40 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   	<div class "container" name = "main">
-  	<div class="container" name="header">
-  		<h1>Boat Racer</h1>
-  		<h2>By Tony Luisi</h2>
+  	<div class="container" id="header">
+  		<br><br><br><br><br>
   	</div>
 
 
   	<div class="container" name="configuration">
   		<form name="parameters">
   			<div class="row">
-  				<div class="three columns">
+  				<div class="four columns">
   					<label for="length">Track Length:</label>
-  				</div>  			
-  				<div class="three columns">
   					<input type="text" name="length" onblur="update()">
   				</div>
-  				<div class="three columns">
+
+
+
+  				<div class="four columns">
   					<label for="players">No of Players:</label>
-  				</div>  			
-  				<div class="three columns">
   					<input type="text" name="players" onblur="update()">
   				</div>
-  				<input type="checkbox" id="CPU" value="yes">CPU players other than Player 1? <br>
-  				<div class="six columns">
-  					<button onclick='update()'>Update</button>
+  				<div class="four columns">
+  					<br>
+  					 <input type="checkbox" id="CPU" value="yes">    CPU players other than Player 1? (Easy Level Only) <br>
   				</div>
-  			</div>
+
+			</div>
   		</form>
   	</div>
 
   	<div class="container" name="track">
-  		<button onclick="go()">START</button>
+  		<div class="row" id="start_button">
+  			<div class="twelve columns">
+  				<button class="button-primary" onclick="go()">START</button>
+  			</div>
+  		</div>
   		<div class="row">
   			<div class="twelve columns">
   				<table id="racer_table">
@@ -76,6 +79,18 @@
   	<div class="container" name="results">
   		<h1 id="display">Press Start When Ready</h1>
   	</div>
+
+  	 <div class="container" id="instructions">
+  		<h2>Instructions</h2>
+  		<ol>
+  			<li>Select track length and number of players.</li>
+  			<li>Check whether you want to player against the CPU.</li>
+  			<li>Key press is the number player (i.e. Player 1 is the 1 key).</li>
+  			<li>Press Start and Enjoy!</li>
+  		</ol>
+  	</div>
+
+  	
   	</div>
 
 

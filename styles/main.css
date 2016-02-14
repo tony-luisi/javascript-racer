@@ -1,26 +1,64 @@
 
 table, th, td {
-   border: 1px 1px 0px 0px solid black;
-   table-layout: fixed;
-   width: 100%;
-   height: 3em;
-   background-color: #0066FF;
+  table-layout: fixed;
+  width: 2em;
+  height: 3em;
+  background-color: #0066FF;
+  border-width: 10px;
+  border-color: white;
+  border: solid 2px lightgrey;
+  border-radius: 10px;
+}
 
+td, th {
+  border: none;
 }
 
 
 .active {
-  background-image:url('../images/boat.png');
+  background-image:url('../images/rubber-duck.png');
   background-size: 3em 3em;
   background-repeat: no-repeat;
   background-position: center; 
+}
 
+.passed {
+  background-image:url('../images/wave.png');
+  background-size: 4.2em 3em;
+  background-repeat: no-repeat;
+  background-position: center; 
 }
 
 body {
   background-color: #009900;
 }
 
-* { border: 1px solid red; }
+#start_button {
+  display: block;
+  text-align: center;
+}
+
+#display {
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+  background-image:url('../images/duck_racer_title.png');
+    background-repeat: no-repeat;
+  background-position: center; 
+
+}
+
+#racer_table {
+  box-shadow: 10px 10px 5px #888;
+}
+
+body {
+    background-image: url("../images/floor_tile.png");
+    background-size: 6em;
+    background-color: #549431;
+}
+
 
 

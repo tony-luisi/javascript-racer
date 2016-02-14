@@ -1,36 +1,36 @@
 function setup() {
-
 	trackLength = Number(sessionStorage.getItem('trackLength')) || 10;
 	players = Number(sessionStorage.getItem('players')) || 2;
 	document.parameters.length.value = trackLength;
 	document.parameters.players.value = players;
 	positions = [];
+	quack = new Audio('./audio/duck.mp3');
 	timer = 5;
 	drawTable();
 	won = false;
-
-
 }
 
 function press(e) {
 	//check bounds to make sure only valid keys are pressed
-	if ((e.keyCode > 48) && e.keyCode < (Number(players) + 49)) {
+	if ((e.keyCode > 48) && e.keyCode < (Number(players) + 49) && !won) {
 		var pressedNumber = Number(e.keyCode) - 49;
-		mainTable.rows[pressedNumber].cells[positions[pressedNumber]].className = "";
+		mainTable.rows[pressedNumber].cells[positions[pressedNumber]].className = "passed";
 		mainTable.rows[pressedNumber].cells[positions[pressedNumber] + 1].className = "active";
 		positions[pressedNumber] += 1;
+		quack.play();
+
 	}
 	checkWon();
 }
 
 function checkWon() {
 	for(var i = 0; i < players; i++) {
-		if (positions[i] == trackLength-1) {
+		if (positions[i] == trackLength-1 && !won) {
 			alert("Player " + (i+1) + " has won.");
+			window.clearInterval(countdown);
 			document.removeEventListener('keyup', press);
 			won = true;
 			window.clearInterval(computerPlayer);
-
 		}
 	}
 }
@@ -40,7 +40,7 @@ function go() {
 	if (timer > 0) {
 		document.getElementById('display').innerHTML = timer;
 		timer--;
-		var countdown = window.setInterval(go, 1200);
+		countdown = window.setInterval(go, 1200);
 	} else {
 		document.getElementById('display').innerHTML = "GO!";
 		document.addEventListener('keyup', press);
@@ -48,10 +48,7 @@ function go() {
 		if (document.getElementById("CPU").checked) {
 			computerPlayer = window.setInterval(CPU(), 1);
 		}
-
 	}
-
-	
 }
 
 function CPU(){
@@ -66,15 +63,11 @@ function CPU(){
 		} else {
 			console.log("player: " + i + " NO KEY PRESS");
 		}
-
 	}
-
-
 }
 
 //draw/update the table
 function drawTable() {
-
 	//create the table
 	mainTable = document.getElementById("racer_table");
 
@@ -98,10 +91,18 @@ function drawTable() {
 }
 
 function update() {
-	trackLength = Number(document.parameters.length.value) || trackLength;
-	sessionStorage.setItem('trackLength', trackLength);
-	players = Number(document.parameters.players.value) || players;
-	sessionStorage.setItem('players', players);
+	if (Number(document.parameters.length.value)>0 && Number(document.parameters.length.value) < 21){
+			trackLength = Number(document.parameters.length.value) || trackLength;
+			sessionStorage.setItem('trackLength', trackLength);
+	} else {
+		alert('Invalid track length (please choose between 1 and 20)');
+	}
+	 if (Number(document.parameters.players.value) > 0 && Number(document.parameters.players.value) < 10) {
+	 	players = Number(document.parameters.players.value) || players;
+		sessionStorage.setItem('players', players);
+	 } else {
+	 	alert('Invalid no of players (please choose between 1 and 9)')
+	 }
 	drawTable();
 }
 
