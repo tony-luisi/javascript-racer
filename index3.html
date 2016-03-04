@@ -37,27 +37,26 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   	<div class="container">
-      <div class="container animated bounceIn center" id="header">
+      <div class="container animated bounceIn" id="header">
        <br><br><br><br> 
       </div>
 
       <div class "container" name = "main">
-        <div class="row center">
+        <div class="row">
           <div class="four columns">
-            <button class="button-primary animated bounceInLeft" onclick="setDifficulty('easy')">EASY</button>
+            <button class="button-primary animated bounceInLeft">EASY</button>
           </div>
           <div class="four columns">
-            <button class="button-primary animated bounceInDown" onclick="setDifficulty('medium')">MEDIUM</button>
+            <button class="button-primary animated bounceInDown">MEDIUM</button>
           </div>
           <div class="four columns">
-            <button class="button-primary animated bounceInRight" onclick="setDifficulty('hard')">HARD</button>
+            <button class="button-primary animated bounceInRight">HARD</button>
           </div>
           
         </div>
-        <div class="row center">
-          <div class="twelve columns">
+        <div class="row">
+          <div class="offset-by-five twelve columns">
             <button class="button-primary animated infinite flash" onclick="go()">START</button>
-            <button class="button-primary" onclick="start()">RESET</button>
           </div>
         </div>
 
@@ -65,14 +64,6 @@
 
       
     </div>
-            <div class="row">
-          <canvas id="myCanvas"></canvas>
-        </div>
-        <div class="container">
-                              <div class="row">
-          <div id="result" class="animated infinite flash"></div>
-        </div>
-        </div>
 
 
 
@@ -86,13 +77,8 @@
       <img id="alligator" src="images/alligator.png">
       <img id="water" src="images/sea_bg.png">
     </div>
-  <script type="text/javascript" src="tetris.js" canvas="myCanvas"></script>
-  <script type="text/javascript">
-          start();
-
-    
-
-  </script>
+  <script type="text/javascript" src="tetrisa.js" canvas="myCanvas"></script>
+  <script type="text/javascript">start();</script>
 	<!-- <script type="text/javascript" src="racer.js"></script>--> 
 
 <!-- End Document

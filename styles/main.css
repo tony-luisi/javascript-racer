@@ -33,7 +33,7 @@ body {
   background-color: #009900;
 }
 
-#start_button {
+.center {
   display: block;
   text-align: center;
 }
@@ -45,7 +45,7 @@ body {
 #header {
   text-align: center;
   background-image:url('../images/duck_racer_title.png');
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center; 
 
 }
@@ -55,9 +55,8 @@ body {
 }
 
 body {
-    background-image: url("../images/floor_tile.png");
-    background-size: 6em;
-    background-color: #549431;
+    background-image: url("../images/grass_new.png");
+    background-size: 12em;
 }
 
 
