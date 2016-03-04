@@ -2,12 +2,23 @@ var noLogs = 20;
 var ctx;
 
 function start() {
+
+
     console.log("LOADING");
+    $("button").css("background-color", "black");
+    $("button").css("border-color", "black");
+    $("#medium").css("background-color", "#FF8400");
+    document.getElementById("overlay").innerHTML = "";
+    $("#overlay").removeClass("animated infinite flash");
 
     gameStarted = false;
     gameReset = true;
     bg = new Audio('audio/soundtrack.mp3');
+    quack = new Audio('audio/duck.mp3');
+    fail = new Audio('audio/fail.mp3');
+    success = new Audio('audio/success.mp3');
 
+    bg.pause();
     c = document.getElementById("myCanvas");
     c.width = window.innerWidth;
     window.resizeTo(window.innerWidth, window.outerHeight);
@@ -28,16 +39,35 @@ function start() {
 
 
 
-    document.getElementById("result").innerHTML = "";
+    document.getElementById("overlay").innerHTML = "<h1>HELP DUCKY FIND LOVE!</h1><h1>SELECT DIFFICULTY. USE ARROW KEYS TO CONTROL . </h1><h1>PRESS START WHEN READY!</h1>";
 }
 
 function setDifficulty(text){
     if (text === "easy") {
-        noLogs = 10;
+        $("button").css("background-color", "black");
+        $("#easy").css("background-color", "#FF8400");
+        $("#easy").removeClass("animated bounceInLeft");
+        $("#medium").removeClass("animated shake");
+        $("#hard").removeClass("animated shake");
+        $("#easy").addClass("animated shake");
+
+        noLogs = 33;
     } else if (text === "medium") {
-        noLogs = 20;
+        $("button").css("background-color", "black");
+        $("#medium").css("background-color", "#FF8400");
+        $("#medium").removeClass("animated bounceInDown");
+        $("#easy").removeClass("animated shake");
+        $("#hard").removeClass("animated shake");
+        $("#medium").addClass("animated shake");
+        noLogs = 66;
     } else if (text === "hard") {
-        noLogs = 200;
+        $("button").css("background-color", "black");
+        $("#hard").css("background-color", "#FF8400");
+        $("#hard").removeClass("animated bounceInRight");
+        $("#easy").removeClass("animated shake");
+        $("#medium").removeClass("animated shake");
+        $("#hard").addClass("animated shake");
+        noLogs = 99;
     }
 }
 
@@ -48,6 +78,10 @@ function stop() {
 }
 
 function go() {
+    $("#start").removeClass("animated");
+    $("#start").css("background-color", "#FF8400");
+    document.getElementById("overlay").innerHTML = "";
+
     if (!gameStarted && gameReset) {
         requestAnimationFrame(updateGame);
         console.log("console go");
@@ -75,17 +109,19 @@ function updateGame() {
         if (logs[log].intersects(duck)) {
             
             stop();
+            document.getElementById("overlay").innerHTML = "<h1>YOU HAVE BEEN EATEN!</h1>";
+            $("#overlay").addClass("animated infinite flash");
+            fail.play();
             return;
-            //alert("you lose");
         }
     }
 
         if (duck.intersects(goal)) {
             
             stop();
-
-            //alert("you win");
-            document.getElementById("result").innerHTML = "<h1>YOU FOUND LOVE!</h1>";
+            document.getElementById("overlay").innerHTML = "<h1>YOU FOUND LOVE!</h1>";
+            $("#overlay").addClass("animated infinite flash");
+            success.play();
             return;
         }
 
@@ -135,7 +171,7 @@ function press(event) {
     }
 
     if (gameStarted) {
-
+    quack.play();
 
     var key = event.keyCode || event.which;
     //console.log(duck.x)

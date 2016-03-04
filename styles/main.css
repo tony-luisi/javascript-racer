@@ -31,6 +31,7 @@ td, th {
 
 body {
   background-color: #009900;
+  font-family: 'Teko', sans-serif;  
 }
 
 .center {
@@ -50,8 +51,22 @@ body {
 
 }
 
+#overlay {
+  position: relative;
+  background-color:#FF8400;
+  margin-top:-25em;
+  display: block;
+  z-index:0;
+  text-align: center;
+}
+
 #racer_table {
   box-shadow: 10px 10px 5px #888;
+}
+
+button {
+  filter: invert(0%);
+  background-color:#aa00aa;
 }
 
 body {
